@@ -46,7 +46,7 @@ function getHeadMsg(){
                 $("#user_info").html('<small>Welcome</small> '+list.name+'');//登陆者资料
                 user = list.username;
                 userId = list.id;		//用户ID
-                if(list.username !== 'admin'){
+                if(list.username !== 'administrator'){
                     $("#systemset").hide();	//隐藏系统设置
                 }
             });
