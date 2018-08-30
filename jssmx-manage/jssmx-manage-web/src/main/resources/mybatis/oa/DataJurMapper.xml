@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jssmx.manage.mapper.oa.DataJurMapper">
+
+    <select id="getDataJurByUsername" parameterType="string" resultType="dataJur">
+        select
+          d.department_ids,
+          d.department_id
+        from
+          oa_datajur d
+        left join
+          oa_staff s
+        on
+          d.staff_id=d.id
+        where
+          s.user_id=#{username}
+    </select>
+
+
+</mapper>

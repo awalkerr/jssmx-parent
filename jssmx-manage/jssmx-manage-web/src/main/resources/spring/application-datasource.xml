@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 阿里 druid数据库连接池 -->
+    <bean id="masterDataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <!-- 数据库基本信息配置 -->
+        <property name="url" value="${master.url}"/>
+        <property name="username" value="${master.username}"/>
+        <property name="password" value="${master.password}"/>
+        <property name="driverClassName" value="${master.driverClassName}"/>
+        <property name="filters" value="${master.filters}"/>
+        <!-- 最大并发连接数 -->
+        <property name="maxActive" value="${master.maxActive}"/>
+        <!-- 初始化连接数量 -->
+        <property name="initialSize" value="${master.initialSize}"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${master.maxWait}"/>
+        <!-- 最小空闲连接数 -->
+        <property name="minIdle" value="${master.minIdle}"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${master.timeBetweenEvictionRunsMillis}"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${master.minEvictableIdleTimeMillis}"/>
+        <property name="validationQuery" value="${master.validationQuery}"/>
+        <property name="testWhileIdle" value="${master.testWhileIdle}"/>
+        <property name="testOnBorrow" value="${master.testOnBorrow}"/>
+        <property name="testOnReturn" value="${master.testOnReturn}"/>
+        <property name="maxOpenPreparedStatements" value="${master.maxOpenPreparedStatements}"/>
+        <!-- 打开removeAbandoned功能 -->
+        <property name="removeAbandoned" value="${master.removeAbandoned}"/>
+        <!-- 1800秒，也就是30分钟 -->
+        <property name="removeAbandonedTimeout" value="${master.removeAbandonedTimeout}"/>
+        <!-- 关闭abanded连接时输出错误日志 -->
+        <property name="logAbandoned" value="${master.logAbandoned}"/>
+    </bean>
+
+    <!-- 阿里 druid数据库连接池 -->
+    <bean id="slave01DataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <!-- 数据库基本信息配置 -->
+        <property name="url" value="${slave01.url}"/>
+        <property name="username" value="${slave01.username}"/>
+        <property name="password" value="${slave01.password}"/>
+        <property name="driverClassName" value="${slave01.driverClassName}"/>
+        <property name="filters" value="${slave01.filters}"/>
+        <!-- 最大并发连接数 -->
+        <property name="maxActive" value="${slave01.maxActive}"/>
+        <!-- 初始化连接数量 -->
+        <property name="initialSize" value="${slave01.initialSize}"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="${slave01.maxWait}"/>
+        <!-- 最小空闲连接数 -->
+        <property name="minIdle" value="${slave01.minIdle}"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="${slave01.timeBetweenEvictionRunsMillis}"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="${slave01.minEvictableIdleTimeMillis}"/>
+        <property name="validationQuery" value="${slave01.validationQuery}"/>
+        <property name="testWhileIdle" value="${slave01.testWhileIdle}"/>
+        <property name="testOnBorrow" value="${slave01.testOnBorrow}"/>
+        <property name="testOnReturn" value="${slave01.testOnReturn}"/>
+        <property name="maxOpenPreparedStatements" value="${slave01.maxOpenPreparedStatements}"/>
+        <!-- 打开removeAbandoned功能 -->
+        <property name="removeAbandoned" value="${slave01.removeAbandoned}"/>
+        <!-- 1800秒，也就是30分钟 -->
+        <property name="removeAbandonedTimeout" value="${slave01.removeAbandonedTimeout}"/>
+        <!-- 关闭abanded连接时输出错误日志 -->
+        <property name="logAbandoned" value="${slave01.logAbandoned}"/>
+    </bean>
+
+</beans>

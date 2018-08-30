@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 全局映射器启用缓存 -->
+        <setting name="cacheEnabled" value="true" />
+        <!--允许 JDBC 支持生成的键-->
+        <setting name="useGeneratedKeys" value="true" />
+        <!--配置默认的执行器-->
+        <setting name="defaultExecutorType" value="REUSE" />
+        <!--自动把数据库自动按驼峰命名-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--打印sql语句-->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="com.jssmx.common.utility.PageData" alias="pd"/>
+        <typeAlias type="com.jssmx.manage.pojo.basic.Page" alias="Page"/>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.jssmx.manage.web.plugin.PagePlugin">
+            <property name="dialect" value="mysql"/>
+            <property name="pageSqlId" value=".*listPage.*"/>
+        </plugin>
+    </plugins>
+
+</configuration>
