@@ -1,4 +1,4 @@
-<%--<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="sidebar" class="sidebar responsive">
     <script type="text/javascript">
         try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
@@ -87,13 +87,13 @@
                                                                         <c:if test="${menu4.hasMenu && '1' == menu4.state}">
                                                                             <li class="" id="n${menu4.id }">
                                                                                 <c:if test="${'[]' != menu4.subMenu}">
-                                                                                    <a style="cursor:pointer;" target="mainFrame" onclick="isMenu('n${menu4.id }','m${menu3.id }','${menu4.name }','menu/otherListMenu.do?id=${menu4.id }')">
-                                                                                </c:if>
-                                                                                <c:if test="${'[]' == menu4.subMenu}">
+                                                                                <a style="cursor:pointer;" target="mainFrame" onclick="isMenu('n${menu4.id }','m${menu3.id }','${menu4.name }','menu/otherListMenu.do?id=${menu4.id }')">
+                                                                                    </c:if>
+                                                                                    <c:if test="${'[]' == menu4.subMenu}">
                                                                                     <a style="cursor:pointer;" target="mainFrame" <c:if test="${not empty menu4.url && '#' != menu4.url}"> target="mainFrame" onclick="isMenu('n${menu4.id }','m${menu3.id }','${menu4.name }','${menu4.url }')"</c:if>>
-                                                                                </c:if>
-                                                                                    <i class="${menu4.icon == null ? 'menu-icon fa fa-leaf black' : menu4.icon}"></i>
-                                                                                        ${menu4.name }
+                                                                                        </c:if>
+                                                                                        <i class="${menu4.icon == null ? 'menu-icon fa fa-leaf black' : menu4.icon}"></i>
+                                                                                            ${menu4.name }
                                                                                     </a>
                                                                                     <b class="arrow"></b>
                                                                             </li>

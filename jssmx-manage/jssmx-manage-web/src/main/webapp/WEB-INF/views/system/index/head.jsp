@@ -22,7 +22,7 @@
         <div class="navbar-header pull-left">
             <!-- #section:basics/navbar.layout.brand -->
             <a class="navbar-brand">
-                <small><i class="fa fa-leaf"></i> ${sysName} </small>
+                <small><i class="fa fa-leaf"></i> ${pd.sysName} </small>
             </a>
 
             <!-- /section:basics/navbar.layout.brand -->

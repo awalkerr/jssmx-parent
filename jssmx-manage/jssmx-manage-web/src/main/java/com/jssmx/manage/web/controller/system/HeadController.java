@@ -50,8 +50,8 @@ public class HeadController extends BaseController {
             User users = (User)session.getAttribute(Const.SESSION_USERPDS);
             String username = Jurisdiction.getUsername();
             if(null == users){
-                User user=userService.getByUsername(username);
-                session.setAttribute(Const.SESSION_USERPDS,user);
+                users=userService.getByUsername(username);
+                session.setAttribute(Const.SESSION_USERPDS,users);
             }
             userList.add(users);
             map.put("list",userList);

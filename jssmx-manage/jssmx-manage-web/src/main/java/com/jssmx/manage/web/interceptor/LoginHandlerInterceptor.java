@@ -19,7 +19,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         }else {
             User user = (User) Jurisdiction.getSession().getAttribute(Const.SESSION_USER);
             if(user != null){
-                path = path.substring(1,path.length());
+                path = path.substring(1);
                 boolean b = Jurisdiction.menuJurisdiction(path);
                 if(!b){
                     response.sendRedirect(request.getContextPath() + Const.LOGIN);

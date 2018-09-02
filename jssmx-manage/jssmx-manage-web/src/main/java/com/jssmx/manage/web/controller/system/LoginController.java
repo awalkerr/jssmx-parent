@@ -120,6 +120,7 @@ public class LoginController extends BaseController {
     @GetMapping(value = "/main/{changeMenu}")
     public ModelAndView login_index(@PathVariable("changeMenu") String changeMenu) {
         ModelAndView mv = new ModelAndView();
+        PageData pd = new PageData();
         try {
             Session session = Jurisdiction.getSession();
             User user = (User) session.getAttribute(Const.SESSION_USER);
@@ -149,6 +150,7 @@ public class LoginController extends BaseController {
                 mv.setViewName("system/index/main");
                 mv.addObject("user",user);
                 mv.addObject("menuList",menuList);
+                mv.setViewName("system/index/main");
             } else {
                 mv.setViewName("system/index/login");
             }
@@ -157,8 +159,9 @@ public class LoginController extends BaseController {
             logger.error(e.getMessage(), e);
         }
 
-        mv.addObject("sysName", propertiesService.SYS_NAME);
-        mv.setViewName("system/index/main");
+
+        pd.put("sysName",propertiesService.SYS_NAME);
+        mv.addObject("pd", pd);
         return mv;
     }
 
